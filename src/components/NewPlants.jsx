@@ -53,7 +53,7 @@ function NewPlants() {
         {newPlants.map((plant, idx) => (
           <div
             key={idx}
-            className="bg-white rounded-xl shadow-lg border-2 border-slate-200 overflow-hidden hover:shadow-lg transition-all"
+            className="bg-white rounded-xl shadow-green-100 border-2 cursor-pointer border-green-100 overflow-hidden hover:border-green-300 delay-200 transition-all"
           >
             <img
               src={plant.image}

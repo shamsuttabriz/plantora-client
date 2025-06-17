@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
           to="/"
         >
           Home
@@ -14,7 +14,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
           to="/all-plants"
         >
           All Plants
@@ -22,7 +22,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
           to="/add-plant"
         >
           Add Plant
@@ -30,7 +30,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
           to="/my-plants"
         >
           My Plants
@@ -38,7 +38,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
           to="/login"
         >
           Login
@@ -46,7 +46,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
           to="/register"
         >
           Register
@@ -84,7 +84,7 @@ function Navbar() {
             </ul>
           </div>
           <Link to="/" className="text-xl lg:text-2xl font-bold text-green-600">
-          🌱 Plantora
+          🌿 Plantora
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -93,27 +93,13 @@ function Navbar() {
         <div className="navbar-end">
           <Link
             to="/profile"
-            className="h-10 w-10 rounded-full bg-red-300 flex justify-center items-center cursor-pointer"
+            className="h-10 w-10 rounded-full border-2 border-green-400 bg-green-100 flex justify-center items-center cursor-pointer"
           >
             P
           </Link>
         </div>
       </div>
     </div>
-    // <nav className="flex justify-between items-center p-4 shadow-md bg-white dark:bg-slate-900">
-    //   <h1 className="text-2xl font-bold text-green-700">🌱 Plantora</h1>
-    //   <ul className="flex gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-    //     <li>Home</li>
-    //     <li>My Plants</li>
-    //     <li>Categories</li>
-    //     <li>Journal</li>
-    //     <li>Tips</li>
-    //   </ul>
-    //   <div className="flex items-center gap-4">
-    //     <button className="btn btn-sm btn-primary btn-outline">Sign In</button>
-    //     <button className="btn btn-sm btn-success">Register</button>
-    //   </div>
-    // </nav>
   );
 }
 

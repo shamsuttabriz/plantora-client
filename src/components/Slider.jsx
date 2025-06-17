@@ -45,7 +45,7 @@ export default function Slider() {
             }`}
           >
             <div className="w-full md:w-1/2 space-y-4">
-              <h2 className="text-3xl md:text-4xl font-bold text-green-600">
+              <h2 className="text-3xl md:text-5xl font-bold text-green-600">
                 {slide.heading}
               </h2>
               <p className="text-sm md:text-base text-gray-600">{slide.description}</p>
