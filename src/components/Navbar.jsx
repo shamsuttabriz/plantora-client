@@ -6,7 +6,7 @@ function Navbar() {
     <>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600" : "")}
           to="/"
         >
           Home
@@ -14,7 +14,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600" : "")}
           to="/all-plants"
         >
           All Plants
@@ -22,7 +22,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600" : "")}
           to="/add-plant"
         >
           Add Plant
@@ -30,7 +30,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600" : "")}
           to="/my-plants"
         >
           My Plants
@@ -38,7 +38,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600" : "")}
           to="/login"
         >
           Login
@@ -46,7 +46,7 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-indigo-600" : "")}
+          className={({ isActive }) => (isActive ? "text-green-600" : "")}
           to="/register"
         >
           Register
