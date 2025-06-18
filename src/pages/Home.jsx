@@ -12,7 +12,6 @@ function Home() {
       <NewPlants />
       <WhyChooseUs />
       <OurMission />
-      <Footer />
     </div>
   );
 }

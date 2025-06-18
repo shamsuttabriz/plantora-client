@@ -9,7 +9,7 @@ function MainLayout() {
       <header>
         <Navbar />
       </header>
-      <div className="min-h-[calc(100vh-400px)]">
+      <div className="min-h-[calc(100vh-400px)] bg-green-100">
         <Outlet />
       </div>
       <footer>

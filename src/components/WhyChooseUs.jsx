@@ -1,6 +1,6 @@
 export default function WhyChooseUs() {
   return (
-    <section className="bg-green-50 py-16 px-5">
+    <section className="py-30 px-5">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">
           Why Choose Plantora?

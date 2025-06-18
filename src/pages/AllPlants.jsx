@@ -1,33 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 export default function AllPlants() {
   const [plants, setPlants] = useState([]);
+  const initialPlants = useLoaderData();
 
   useEffect(() => {
-    // Fake data — তুমি এখানে backend API দিয়ে replace করতে পারো
-    const mockData = [
-      {
-        _id: "1",
-        name: "Aloe Vera",
-        category: "Succulent",
-        wateringFrequency: "Every 3 days",
-      },
-      {
-        _id: "2",
-        name: "Boston Fern",
-        category: "Fern",
-        wateringFrequency: "Every 2 days",
-      },
-      {
-        _id: "3",
-        name: "Rose",
-        category: "Flowering",
-        wateringFrequency: "Every 1 day",
-      },
-    ];
-    setPlants(mockData);
-  }, []);
+    setPlants(initialPlants);
+  }, [initialPlants]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
@@ -56,7 +36,7 @@ export default function AllPlants() {
                 <td>{plant.category}</td>
                 <td>{plant.wateringFrequency}</td>
                 <td>
-                  <Link to={`/plants/${plant._id}`}>
+                  <Link to={`/plant-details/${plant._id}`}>
                     <button className="btn btn-sm btn-outline btn-success">
                       View Details
                     </button>

@@ -5,6 +5,8 @@ import NotFound from "../components/NotFound";
 import AddPlant from "../pages/AddPlant";
 import AllPlants from "../pages/AllPlants";
 import MyPlants from "../pages/MyPlants";
+import Loader from "../components/Loader";
+import PlantDetails from "../pages/PlantDetails";
 
 export const router = createBrowserRouter([
   {
@@ -16,15 +18,24 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path: "add-plant",
+        path: "/add-plant",
         Component: AddPlant,
       },
       {
-        path: "all-plants",
+        path: "/all-plants",
+        hydrateFallbackElement: <Loader />,
+        loader: () => fetch("http://localhost:3000/plants"),
         Component: AllPlants,
       },
       {
-        path: "my-plants",
+        path: "/plant-details/:id",
+        hydrateFallbackElement: <Loader />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/plants/${params.id}`),
+        Component: PlantDetails,
+      },
+      {
+        path: "/my-plants",
         Component: MyPlants,
       },
     ],
