@@ -1,9 +1,8 @@
 import React from "react";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData } from "react-router";
 
 const PlantDetails = () => {
-  const { _id } = useParams();
-  const plant = useLoaderData(); // Load the specific plant using loader
+  const plant = useLoaderData();
   console.log(plant);
   const {
     image,
@@ -22,7 +21,7 @@ const PlantDetails = () => {
   return (
     <div className="py-10 px-5 lg:px-0 lg:py-20">
       <div className="max-w-5xl lg:mx-auto bg-white border-3 rounded-2xl border-green-200 shadow-green-200 shadow-lg">
-        <div className="grid grid-cols-1 items-center md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 py-10 items-center md:grid-cols-2 gap-8">
           {/* Image Section */}
           <div>
             <img
@@ -62,7 +61,7 @@ const PlantDetails = () => {
               </p>
             </div>
 
-            <hr className="my-4 text-green-300" />
+            <hr className="my-4 text-green-200" />
 
             <div>
               <p>

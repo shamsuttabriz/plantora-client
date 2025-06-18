@@ -41,7 +41,7 @@ function NewPlants() {
     },
   ];
   return (
-    <div className="bg-white px-4 py-12">
+    <div className="px-4 py-12">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
           <h2 className="text-3xl font-bold mb-2 text-green-600">
@@ -56,7 +56,7 @@ function NewPlants() {
           {newPlants.map((plant, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-xl shadow-green-100 border-2 cursor-pointer border-green-100 overflow-hidden transition-all"
+              className="bg-white rounded-xl shadow-green-100 border-2 cursor-pointer border-green-200 overflow-hidden transition-all"
             >
               <img
                 src={plant.image}

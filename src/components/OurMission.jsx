@@ -1,6 +1,6 @@
 export default function OurMission() {
   return (
-    <section className="bg-white py-16 px-5">
+    <section className="py-16 px-5">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
         <div className="flex-1">
           <img
