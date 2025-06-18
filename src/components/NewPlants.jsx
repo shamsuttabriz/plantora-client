@@ -1,5 +1,6 @@
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router";
 
 function NewPlants() {
   const newPlants = [
@@ -73,11 +74,11 @@ function NewPlants() {
         </div>
 
         <div className="text-right mt-6">
-          <button className="btn btn-outline btn-success hover:text-white text-2xl font-medium px-5 py-6">
+          <Link to="/all-plants" className="btn btn-outline btn-success hover:text-white text-2xl font-medium px-5 py-6">
             <p>
               <FaChevronRight />
             </p>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -8,6 +8,8 @@ import MyPlants from "../pages/MyPlants";
 import Loader from "../components/Loader";
 import PlantDetails from "../pages/PlantDetails";
 import UpdatedPlant from "../pages/UpdatedPlant";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 export const router = createBrowserRouter([
   {
@@ -47,6 +49,14 @@ export const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:3000/plants/${params.id}`),
         Component: UpdatedPlant,
       },
+      {
+        path: "/login",
+        Component: Login
+      },
+      {
+        path: "/register",
+        Component: Register
+      }
     ],
   },
   {
