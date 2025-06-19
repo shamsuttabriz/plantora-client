@@ -5,13 +5,13 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC73RNPji2PcNZAjT67pCZz7qyDm9M4i9c",
-  authDomain: "plantora-tracking-app.firebaseapp.com",
-  projectId: "plantora-tracking-app",
-  storageBucket: "plantora-tracking-app.firebasestorage.app",
-  messagingSenderId: "427966881443",
-  appId: "1:427966881443:web:a235e8f301d2e11d6da916"
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);

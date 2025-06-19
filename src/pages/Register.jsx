@@ -1,10 +1,66 @@
-import { Link } from "react-router";
+import { use, useState } from "react";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 export default function Register() {
+  const [error, setError] = useState("");
+  const { createUser, updateUser, setUser } = use(AuthContext);
+
+  const navigate = useNavigate();
+
   const handleRegister = (e) => {
     e.preventDefault();
-    console.log("Registration Info:", { name, email, password });
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    console.log(name, email, photo, password);
+
+    // Name issues
+    if (name.length < 5) {
+      Swal.fire({
+        toast: true,
+        position: "center",
+        icon: "error",
+        title: "Find Error!",
+        text: "Give me at least 6 letter",
+        showConfirmButton: false,
+        timer: 3000,
+      });
+      return;
+    } else {
+      setError("");
+    }
+
     // Implement registration logic here
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        // Update User
+        updateUser({ displayName: name, photoURL: photo }).then(() => {
+          setUser({ ...user, displayName: name, photoURL: photo });
+          Swal.fire({
+            icon: "success",
+            title: "Account Created",
+            text: "Your account has been successfully created!",
+          });
+          navigate("/");
+        });
+      })
+      .catch((err) => {
+        setError(err.message);
+        Swal.fire({
+          toast: true,
+          position: "center",
+          icon: "error",
+          title: "Registration Failed",
+          text: `${err.message}`,
+          showConfirmButton: false,
+          timer: 3000,
+        });
+      });
   };
 
   return (
@@ -16,18 +72,28 @@ export default function Register() {
         <form onSubmit={handleRegister}>
           <input
             type="text"
+            name="name"
             placeholder="Full Name"
             className="w-full input input-bordered mb-4"
             required
           />
           <input
             type="email"
+            name="email"
             placeholder="Email"
             className="w-full input input-bordered mb-4"
             required
           />
           <input
+            type="text"
+            name="photo"
+            placeholder="Photo URL"
+            className="w-full input input-bordered mb-4"
+            required
+          />
+          <input
             type="password"
+            name="password"
             placeholder="Password"
             className="w-full input input-bordered mb-4"
             required
