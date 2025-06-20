@@ -16,7 +16,6 @@ export default function Register() {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
-    console.log(name, email, photo, password);
 
     // Name issues
     if (name.length < 5) {
@@ -104,7 +103,7 @@ export default function Register() {
         </form>
         <p className="text-center mt-4">
           Already have an account?{" "}
-          <Link to="/login" className="text-green-600 font-medium">
+          <Link to="/auth/login" className="text-green-600 font-medium">
             Login
           </Link>
         </p>

@@ -28,8 +28,6 @@ export default function UpdatedPlant() {
 
     const updatedPlant = Object.fromEntries(formData.entries());
 
-    console.log(updatedPlant);
-
     // send updted plant to the db
     fetch(`http://localhost:3000/plants/${_id}`, {
       method: "PUT",
@@ -40,7 +38,6 @@ export default function UpdatedPlant() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log("After updted data: ", data);
         if (data.modifiedCount) {
           Swal.fire({
             position: "center",

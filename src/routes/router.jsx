@@ -10,6 +10,9 @@ import PlantDetails from "../pages/PlantDetails";
 import UpdatedPlant from "../pages/UpdatedPlant";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import AuthLayout from "../layouts/AuthLayout";
+import PrivateRoute from "../provider/PrivateRoute";
+import Prifile from "../pages/Prifile";
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +25,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/add-plant",
-        Component: AddPlant,
+        element: (
+          <PrivateRoute>
+            <AddPlant />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/all-plants",
@@ -32,31 +39,58 @@ export const router = createBrowserRouter([
       },
       {
         path: "/plant-details/:id",
+        element: (
+          <PrivateRoute>
+            <PlantDetails />
+          </PrivateRoute>
+        ),
         hydrateFallbackElement: <Loader />,
         loader: ({ params }) =>
           fetch(`http://localhost:3000/plants/${params.id}`),
-        Component: PlantDetails,
       },
       {
         path: "/my-plants",
+        element: (
+          <PrivateRoute>
+            <MyPlants />
+          </PrivateRoute>
+        ),
         hydrateFallbackElement: <Loader />,
         loader: () => fetch("http://localhost:3000/plants"),
-        Component: MyPlants,
       },
       {
         path: "/updated-plant/:id",
-        hydrateFallbackElement: <Loader/>,
-        loader: ({params}) => fetch(`http://localhost:3000/plants/${params.id}`),
-        Component: UpdatedPlant,
+        element: (
+          <PrivateRoute>
+            <UpdatedPlant />
+          </PrivateRoute>
+        ),
+        hydrateFallbackElement: <Loader />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/plants/${params.id}`),
       },
       {
-        path: "/login",
-        Component: Login
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Prifile />
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+  {
+    path: "/auth",
+    Component: AuthLayout,
+    children: [
+      {
+        path: "/auth/login",
+        Component: Login,
       },
       {
-        path: "/register",
-        Component: Register
-      }
+        path: "/auth/register",
+        Component: Register,
+      },
     ],
   },
   {

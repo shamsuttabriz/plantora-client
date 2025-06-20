@@ -5,18 +5,19 @@
 import { useLoaderData } from "react-router";
 import PlantCard from "../components/PlantCard";
 import Swal from "sweetalert2";
-import { useState } from "react";
+import { use, useState } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 export default function MyPlants() {
-  const email = "mdshamsuttabriz.dev@gmail.com";
+  const { user } = use(AuthContext);
+  const email = user ? user.email : "mdshamsuttabriz.dev@gmail.com";
   const data = useLoaderData();
   const myPlants = data.filter((mail) => mail.userEmail === email);
   const [plants, setPlants] = useState(myPlants);
 
   const handleDeletePlant = (id) => {
-    console.log("Delete Plant", id);
-     // Sweet Alert
-     Swal.fire({
+    // Sweet Alert
+    Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
       icon: "warning",
@@ -32,16 +33,15 @@ export default function MyPlants() {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log("After deleting data", data);
-            Swal.fire({
-              title: "Deleted!",
-              text: "Your plant has been deleted.",
-              icon: "success",
-            });
-            // remove the coffee from the state
-            const remainingPlants = plants.filter(
-              (plant) => plant._id !== id
-            );
+            if (data) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your plant has been deleted.",
+                icon: "success",
+              });
+            }
+            // remove the plant from the state
+            const remainingPlants = plants.filter((plant) => plant._id !== id);
             setPlants(remainingPlants);
           });
       }
@@ -67,7 +67,7 @@ export default function MyPlants() {
         ))}
       </div>
       {plants.length === 0 && (
-        <p className="text-center text-gray-500 mt-10">
+        <p className="text-center text-gray-500 mt-10 text-5xl">
           You haven't added any plants yet.
         </p>
       )}

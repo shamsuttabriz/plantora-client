@@ -17,7 +17,8 @@ export default function AllPlants() {
         details and access to more information.
       </p>
 
-      <div className="overflow-x-auto">
+      {/* For larger screens - table view */}
+      <div className="overflow-x-auto hidden md:block">
         <table className="table w-full table-zebra">
           <thead className="bg-green-100 text-green-800">
             <tr>
@@ -46,6 +47,33 @@ export default function AllPlants() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      {/* For smaller screens - card view */}
+      <div className="md:hidden space-y-4">
+        {plants.map((plant, index) => (
+          <div
+            key={plant._id}
+            className="border rounded-xl p-4 shadow bg-white space-y-2"
+          >
+            <p className="text-sm text-gray-500">#{index + 1}</p>
+            <h3 className="text-lg font-semibold text-green-700">
+              {plant.name}
+            </h3>
+            <p>
+              <span className="font-medium">Category:</span> {plant.category}
+            </p>
+            <p>
+              <span className="font-medium">Watering:</span>{" "}
+              {plant.wateringFrequency}
+            </p>
+            <Link to={`/plant-details/${plant._id}`}>
+              <button className="mt-2 btn btn-sm btn-outline btn-success">
+                View Details
+              </button>
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );

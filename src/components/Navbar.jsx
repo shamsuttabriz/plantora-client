@@ -1,12 +1,40 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 function Navbar() {
+  const { user, signOutUser } = use(AuthContext);
+  console.log(user);
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Signout successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      })
+      .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: err.message,
+        });
+      });
+  };
+
   const list = (
     <>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
+          className={({ isActive }) =>
+            isActive
+              ? "text-green-600 border border-green-600"
+              : "border border-white"
+          }
           to="/"
         >
           Home
@@ -14,44 +42,82 @@ function Navbar() {
       </li>
       <li className="font-bold">
         <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
+          className={({ isActive }) =>
+            isActive
+              ? "text-green-600 border border-green-600"
+              : "border border-white"
+          }
           to="/all-plants"
         >
           All Plants
         </NavLink>
       </li>
-      <li className="font-bold">
-        <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
-          to="/add-plant"
-        >
-          Add Plant
-        </NavLink>
-      </li>
-      <li className="font-bold">
-        <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
-          to="/my-plants"
-        >
-          My Plants
-        </NavLink>
-      </li>
-      <li className="font-bold">
-        <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
-          to="/login"
-        >
-          Login
-        </NavLink>
-      </li>
-      <li className="font-bold">
-        <NavLink
-          className={({ isActive }) => (isActive ? "text-green-600 border border-green-600" : "border border-white")}
-          to="/register"
-        >
-          Register
-        </NavLink>
-      </li>
+      {user ? (
+        <>
+          {" "}
+          <li className="font-bold">
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-green-600 border border-green-600"
+                  : "border border-white"
+              }
+              to="/add-plant"
+            >
+              Add Plant
+            </NavLink>
+          </li>
+          <li className="font-bold">
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-green-600 border border-green-600"
+                  : "border border-white"
+              }
+              to="/my-plants"
+            >
+              My Plants
+            </NavLink>
+          </li>
+          <li className="font-bold">
+            <Link
+              to="/"
+              onClick={handleSignOut}
+              className="border border-white"
+            >
+              Logout
+            </Link>
+          </li>
+        </>
+      ) : (
+        <>
+          {" "}
+          <li className="font-bold">
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-green-600 border border-green-600"
+                  : "border border-white"
+              }
+              to="/auth/login"
+            >
+              Login
+            </NavLink>
+          </li>
+          <li className="font-bold">
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-green-600 border border-green-600"
+                  : "border border-white"
+              }
+              to="/auth/register"
+            >
+              Register
+            </NavLink>
+          </li>{" "}
+        </>
+      )}
     </>
   );
   return (
@@ -83,20 +149,28 @@ function Navbar() {
               {list}
             </ul>
           </div>
-          <Link to="/" className="text-xl lg:text-2xl font-bold text-green-600">
-          🌿 Plantora
+          <Link to="/" className="text-xl lg:text-2xl font-bold text-green-700">
+            🌿 Plantora
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{list}</ul>
         </div>
         <div className="navbar-end">
-          <Link
-            to="/profile"
-            className="h-10 w-10 rounded-full border-2 border-green-400 bg-green-100 flex justify-center items-center cursor-pointer"
-          >
-            P
-          </Link>
+          {user ? (
+            <Link
+              to="/profile"
+              className="h-10 w-10 rounded-full border-2 border-green-400 bg-green-100 overflow-hidden flex justify-center items-center cursor-pointer"
+            >
+              <img
+                className="h-full w-full object-cover"
+                src={user.photoURL}
+                alt="User Profile"
+              />
+            </Link>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
