@@ -7,7 +7,7 @@
 <p align="center">
   A beautiful, plant-themed platform to explore, track, and love your plants!  
   <br />
-  <a href="https://plantora.vercel.app" target="_blank"><strong>🌐 Live Demo »</strong></a>
+  <a href="https://plantora-tracking-app.web.app" target="_blank"><strong>🌐 Live Demo »</strong></a>
 </p>
 
 <p align="center">
@@ -18,10 +18,9 @@
 
 ---
 
-## 🚀 Live Demo
+## 📝 Project Description
 
-🔗 [Live Website](https://your-plantora-live-link.com)  
-*(Replace with your actual deployed link)*
+Plantora is a plant-themed web application that helps users manage their plant collection effortlessly. Users can add, view, and track plants with watering schedules, categories, and personalized details. Featuring a modern, responsive design, Plantora integrates Firebase for authentication and MongoDB for data management, offering a smooth and intuitive user experience.
 
 ---
 

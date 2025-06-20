@@ -21,6 +21,8 @@ export const router = createBrowserRouter([
     children: [
       {
         index: "/",
+        hydrateFallbackElement: <Loader/>,
+        loader: () => fetch("http://localhost:3000/plants"),
         Component: Home,
       },
       {
