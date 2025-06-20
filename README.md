@@ -1,12 +1,76 @@
-# React + Vite
+<p align="center">
+  <img src="https://img.icons8.com/emoji/96/seedling.png" width="80" alt="Plantora Logo" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h1 align="center">🌿 Plantora</h1>
 
-Currently, two official plugins are available:
+<p align="center">
+  A beautiful, plant-themed platform to explore, track, and love your plants!  
+  <br />
+  <a href="https://plantora.vercel.app" target="_blank"><strong>🌐 Live Demo »</strong></a>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Development-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Frontend-ReactJS-61DAFB?logo=react&style=for-the-badge" />
+</p>
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Live Demo
+
+🔗 [Live Website](https://your-plantora-live-link.com)  
+*(Replace with your actual deployed link)*
+
+---
+
+## ✨ Features
+
+- ✅ User Authentication (Login/Register with Firebase)
+- 🪴 Add, View, Update, Delete plants
+- 📂 Category-wise plant organization (e.g. Succulents, Ferns, Bonsai)
+- 🌊 Watering frequency tracking
+- 📱 Responsive UI for mobile & desktop
+- 🔍 Individual Plant Details Page
+- 👤 User Profile Page with photo & social links
+
+---
+
+## 🖼️ Screenshots
+
+### 🌿 Homepage
+![Homepage Screenshot](https://i.ibb.co/WWRD9QDD/home.png)
+
+### 📋 All Plants Page
+![All Plants Screenshot](https://i.ibb.co/ZRQY2qpT/allplants.png)
+
+---
+
+## 🛠️ Technologies Used
+
+| Technology | Description |
+|------------|-------------|
+| ⚛️ React.js | Frontend Library |
+| 🔥 Firebase | Authentication & Hosting |
+| 🌬️ Tailwind CSS | Styling Framework |
+| 🍃 MongoDB | Database (via backend API) |
+
+---
+
+## 📦 Installation & Setup
+
+```bash
+git clone https://github.com/shamsuttabriz/plantora-client.git
+``` 
+```bash
+cd plantora-client
+```
+
+```bash
+npm install
+```
+
+```bash
+npm run dev
+```
