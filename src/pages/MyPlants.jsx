@@ -28,7 +28,7 @@ export default function MyPlants() {
     }).then((result) => {
       if (result.isConfirmed) {
         // start deleting
-        fetch(`http://localhost:3000/plants/${id}`, {
+        fetch(`https://plantora-server.vercel.app/plants/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

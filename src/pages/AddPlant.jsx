@@ -1,24 +1,6 @@
 import Swal from "sweetalert2";
 
 export default function AddPlant() {
-  //   const [formData, setFormData] = useState({
-  //     image: "",
-  //     name: "",
-  //     category: "",
-  //     description: "",
-  //     careLevel: "",
-  //     wateringFrequency: "",
-  //     lastWateredDate: "",
-  //     nextWateringDate: "",
-  //     healthStatus: "",
-  //     userEmail: "",
-  //     userName: "",
-  //   });
-
-  //   const handleChange = (e) => {
-  //     const { name, value } = e.target;
-  //     setFormData({ ...formData, [name]: value });
-  //   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,13 +9,8 @@ export default function AddPlant() {
     const formData = new FormData(form);
     const newPlant = Object.fromEntries(formData.entries());
 
-    console.log(newPlant);
-
-    // Submit data to your backend here
-    // console.log(formData);
-
     // Send data to server
-    fetch("http://localhost:3000/plants", {
+    fetch("https://plantora-server.vercel.app/plants", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +20,6 @@ export default function AddPlant() {
       .then((res) => res.json())
       .then((data) => {
         if (data) {
-          console.log("After adding plant", data);
           // Show SweetAlert
           Swal.fire({
             icon: "success",
@@ -54,20 +30,6 @@ export default function AddPlant() {
         }
       });
 
-    // // Reset form
-    // setFormData({
-    //   image: "",
-    //   name: "",
-    //   category: "",
-    //   description: "",
-    //   careLevel: "",
-    //   wateringFrequency: "",
-    //   lastWateredDate: "",
-    //   nextWateringDate: "",
-    //   healthStatus: "",
-    //   userEmail: "",
-    //   userName: "",
-    // });
   };
 
   return (

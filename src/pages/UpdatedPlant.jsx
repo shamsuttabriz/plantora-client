@@ -29,7 +29,7 @@ export default function UpdatedPlant() {
     const updatedPlant = Object.fromEntries(formData.entries());
 
     // send updted plant to the db
-    fetch(`http://localhost:3000/plants/${_id}`, {
+    fetch(`https://plantora-server.vercel.app/plants/${_id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

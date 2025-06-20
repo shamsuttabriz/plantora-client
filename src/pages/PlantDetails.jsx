@@ -3,7 +3,6 @@ import { useLoaderData } from "react-router";
 
 const PlantDetails = () => {
   const plant = useLoaderData();
-  console.log(plant);
   const {
     image,
     plantName,

@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
       {
         index: "/",
         hydrateFallbackElement: <Loader/>,
-        loader: () => fetch("http://localhost:3000/plants"),
+        loader: () => fetch("https://plantora-server.vercel.app/plants"),
         Component: Home,
       },
       {
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
       {
         path: "/all-plants",
         hydrateFallbackElement: <Loader />,
-        loader: () => fetch("http://localhost:3000/plants"),
+        loader: () => fetch("https://plantora-server.vercel.app/plants"),
         Component: AllPlants,
       },
       {
@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
         ),
         hydrateFallbackElement: <Loader />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/plants/${params.id}`),
+          fetch(`https://plantora-server.vercel.app/plants/${params.id}`),
       },
       {
         path: "/my-plants",
@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         hydrateFallbackElement: <Loader />,
-        loader: () => fetch("http://localhost:3000/plants"),
+        loader: () => fetch("https://plantora-server.vercel.app/plants"),
       },
       {
         path: "/updated-plant/:id",
@@ -69,7 +69,7 @@ export const router = createBrowserRouter([
         ),
         hydrateFallbackElement: <Loader />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/plants/${params.id}`),
+          fetch(`https://plantora-server.vercel.app/plants/${params.id}`),
       },
       {
         path: "/profile",
