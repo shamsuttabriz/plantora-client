@@ -52,15 +52,15 @@ Plantora is a plant-themed web application that helps users manage their plant c
 
 Here are the core technologies used to build **Plantora**:
 
-- ⚛️ **React.js** – For building dynamic and component-based UI
-- 🌬️ **Tailwind CSS** – For fast and utility-first responsive styling
-- 🔥 **Firebase** – Used for authentication and hosting
-- 🍃 **MongoDB** – NoSQL database to store plant data
-- 🚀 **Express.js** – Backend server for API creation and database handling
-- 🌐 **React Router DOM** – For client-side routing
-- 🧩 **Axios** – For API communication between frontend and backend
-- 🛡️ **Firebase JWT** – For securing protected routes with tokens
-- 🎨 **React Icons** – For adding beautiful icons
+- ⚛️ **React.js** – For building dynamic and component-based UI  
+- 🌬️ **Tailwind CSS** – For fast and utility-first responsive styling  
+- 🔥 **Firebase** – Used for authentication and hosting  
+- 🍃 **MongoDB** – NoSQL database to store plant data  
+- 🚀 **Express.js** – Backend server for API creation and database handling  
+- 🧭 **React Router** – For handling client-side routing  
+- 🌐 **Fetch API** – For communicating between frontend and backend  
+- 🛡️ **Firebase JWT** – For securing protected routes with tokens  
+- 🎨 **React Icons** – For adding beautiful icons  
 - 🧪 **SweetAlert2** – For showing elegant alerts and messages
 
 ---
