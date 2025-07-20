@@ -4,7 +4,7 @@ export default function OurMission() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
         <div className="flex-1">
           <img
-            src="https://i.ibb.co/sppSJFT6/pic-1.png"
+            src="https://res.cloudinary.com/dyvnqvpxq/image/upload/v1753004288/pic-2_ufxcne.png"
             alt="Plantora Mission"
             className="w-full object-contain"
           />

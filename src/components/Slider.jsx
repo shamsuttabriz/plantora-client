@@ -5,22 +5,21 @@ const slides = [
     heading: "Nurture Your Green Friend",
     description:
       "Every plant you care for returns the love in silence — with life, growth, and beauty.",
-    image:
-      "https://i.ibb.co/sppSJFT6/pic-1.png",
+    image:"https://res.cloudinary.com/dyvnqvpxq/image/upload/v1753004288/pic-2_ufxcne.png",
   },
   {
     heading: "Track. Water. Bloom.",
     description:
       "Plantora helps you manage your plant care routine — never miss a watering day again.",
     image:
-      "https://i.ibb.co/CpkFGMs5/pic-2.png",
+      "https://res.cloudinary.com/dyvnqvpxq/image/upload/v1753004288/pic-4_rvujsb.png",
   },
   {
     heading: "A Garden in Your Pocket",
     description:
       "Monitor your entire green space — from succulents to bonsai — anytime, anywhere.",
     image:
-      "https://i.ibb.co/DfPh8TjK/pic-3.png",
+      "https://res.cloudinary.com/dyvnqvpxq/image/upload/v1753004288/pic-4_rvujsb.png",
   },
 ];
 
